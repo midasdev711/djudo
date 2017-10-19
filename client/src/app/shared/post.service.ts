@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '@app/djudo.token';
 import { Observable } from 'rxjs/Observable';
-import { Post, Category } from '../post-list/posts';
+import { Post, Category } from '../posts/post-list/posts';
 
 @Injectable()
 export class PostsService {

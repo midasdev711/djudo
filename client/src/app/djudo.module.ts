@@ -13,7 +13,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MaterialModule } from '@app/shared/material/material.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from './djudo.component';
-import { PostListComponent } from './post-list/post-list.component';
 import { PostsService } from '@app/shared/post.service';
 import { PostEffects } from '@app/state/posts/post.effects';
 import { API_URL } from './djudo.token';
@@ -21,17 +20,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
-import { PostDetailComponent } from './post-detail/post-detail.component';
+import {PostsModule} from '@app/posts/posts.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
     HeaderComponent,
     FooterComponent,
     NavComponent,
     HomeComponent,
-    PostDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +42,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     FlexLayoutModule,
     EffectsModule.forRoot([PostEffects]),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 5 }) : [],
+    PostsModule
   ],
   providers: [
     PostsService,

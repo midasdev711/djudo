@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Post, Category } from '@app/post-list/posts';
+import { Post, Category } from '@app/posts/post-list/posts';
 import { PostActionTypes, PostActions, } from '@app/state/posts/post.actions';
 import { AppState } from '../index';
 
