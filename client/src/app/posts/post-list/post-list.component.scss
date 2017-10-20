@@ -30,19 +30,18 @@
       width: 90%
     }
     .post-container {
-      mat-card {
-        transition: box-shadow .25s;
-        &:hover {
-          box-shadow: -1px 4px 8px $grey;
-        }
+      div {
         cursor: pointer;
-        &.post {
-          margin: 25px 0;
-          color: $grey;
-          transition: color .25s;
-          &:hover {
-            color: #2574A9;
-          }
+        margin: 25px 0;
+        color: $grey;
+        transition: color .5s;
+        box-shadow: 0 0 1px rgba(0,0,0,.11), 0 1px 2px rgba(0,0,0,.22);
+        transition: box-shadow .25s cubic-bezier(.4,0,.2,1);
+        padding: 15px;
+        border-radius: 2px;
+        &:hover {
+          box-shadow: -1px 3px 5px $box-shadow-grey;
+          color: #2574A9;
         }
       }
     }
