@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState, ROOT_REDUCER } from '@app/state/index';
-import { PostsQuery } from '@app/state/posts/post.reducers';
-import { LoadPostsAction, LoadCategoriesAction, SelectPostAction } from '@app/state/posts/post.actions';
+import { PostsQuery } from '@app/posts/state/post.reducers';
+import { LoadPostsAction, LoadCategoriesAction, SelectPostAction } from '@app/posts/state/post.actions';
 import { Post, Category } from '../post-list/posts';
 import { Observable } from 'rxjs/Observable';
 

@@ -14,7 +14,7 @@ import { MaterialModule } from '@app/shared/material/material.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from './djudo.component';
 import { PostsService } from '@app/shared/post.service';
-import { PostEffects } from '@app/state/posts/post.effects';
+import { PostEffects } from '@app/posts/state/post.effects';
 import { API_URL } from './djudo.token';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';

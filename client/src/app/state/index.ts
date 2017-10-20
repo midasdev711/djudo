@@ -2,7 +2,7 @@ import { ActionReducer } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { environment } from '../../environments/environment';
-import { PostsState, postReducers } from '@app/state/posts/post.reducers';
+import { PostsState, postReducers } from '@app/posts/state/post.reducers';
 
 export interface AppState {
   posts: PostsState;

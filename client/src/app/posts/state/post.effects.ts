@@ -3,7 +3,7 @@ import { Effect, Actions, toPayload } from '@ngrx/effects';
 import { PostsService } from '@app/shared/post.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
-import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/state/posts/post.actions';
+import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
 import { Post, Category } from '@app/posts/post-list/posts';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
