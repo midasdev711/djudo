@@ -68,7 +68,9 @@ class Category(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
-
+    class Meta:
+        verbose_name = ("Category")
+        verbose_name_plural = ("Categories")
     objects = CategoryManager()
 
     def __unicode__(self):
