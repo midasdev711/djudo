@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
+import { CommentsComponent } from '@app/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {PostsModule} from '@app/posts/posts.module';
     FooterComponent,
     NavComponent,
     HomeComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

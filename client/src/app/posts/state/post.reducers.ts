@@ -1,7 +1,6 @@
-import { Action } from '@ngrx/store';
 import { Post, Category } from '@app/posts/post-list/posts';
 import { PostActionTypes, PostActions, } from '@app/posts/state/post.actions';
-import { AppState } from '../../state/index';
+import { AppState } from '@app/state/index';
 
 export interface PostsState {
     list: Post[];
