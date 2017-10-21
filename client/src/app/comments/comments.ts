@@ -13,3 +13,11 @@ export interface CommentsState {
   comments: Comment[];
   comment: Comment;
 }
+
+export interface CommentsResponse {
+  items: Comment[];
+}
+
+export interface CommentResponse {
+  item: Comment;
+}

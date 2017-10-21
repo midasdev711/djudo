@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostsService } from '@app/shared/post.service';
+import { PostsService } from '@app/shared/services/posts/post.service';
 
 @Component({
   selector: 'app-root',
