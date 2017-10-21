@@ -21,7 +21,6 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
-import { CommentsComponent } from '@app/comments/comments.component';
 import {ApiService} from '@app/shared/services/api.service';
 
 @NgModule({
@@ -30,8 +29,7 @@ import {ApiService} from '@app/shared/services/api.service';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent,
-    CommentsComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -20,4 +20,12 @@ export class PostsService {
     return this.api.get('categories')
   }
 
+  postComment(id: number, data: Comment): Observable<Comment> {
+    return this.api.post(`posts/${id}`, data);
+  }
+
+  putComment(id: number, data: Comment): Observable<Comment> {
+    return this.api.put(`posts/${id}`, data);
+  }
+
 }
