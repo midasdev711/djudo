@@ -1,4 +1,3 @@
-import { ActionReducer } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { environment } from '../../environments/environment';
@@ -13,5 +12,4 @@ export const ROOT_REDUCER = {
 }
 
 export const META_REDUCERS = !environment.production
-  ? [storeFreeze]
-  : [];
+  ? [storeFreeze] : [];
