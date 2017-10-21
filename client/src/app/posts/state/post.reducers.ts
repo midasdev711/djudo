@@ -1,11 +1,11 @@
-import { Post, Category } from '@app/posts/post-list/posts';
+import { Post, Category, Comment } from '@app/posts/post-list/posts';
 import { PostActionTypes, PostActions, } from '@app/posts/state/post.actions';
 import { AppState } from '@app/state/index';
 
 export interface PostsState {
     list: Post[];
     post: Post;
-    categories: Category[]
+    categories: Category[];
 }
 
 const INITIAL_STATE: PostsState = {
@@ -19,9 +19,10 @@ const INITIAL_STATE: PostsState = {
         published: false,
         created: null,
         category: '',
+        comments: []
 
     },
-    categories: []
+    categories: [],
 }
 
 export function postReducers(state: PostsState = INITIAL_STATE, action: PostActions): PostsState {

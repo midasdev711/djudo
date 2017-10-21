@@ -21,4 +21,13 @@
       <p>{{ (post$ | async)?.body }}</p>
     </mat-card>
   </div>
+
+  <div class="comments-container">
+    <mat-card *ngIf="(post$ | async)?.comments.length > 0">
+      <div *ngFor="let comment of (post$ | async)?.comments">
+        <div>{{ comment.user.username }}</div>
+        <div>{{ comment.content }}</div>
+      </div>
+    </mat-card>
+  </div>
 </section>
