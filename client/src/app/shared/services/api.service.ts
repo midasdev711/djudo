@@ -8,22 +8,17 @@ export class ApiService {
 
   constructor(private http: HttpClient, @Inject(API_URL) private apiUrl) { }
 
-  getItems(url): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${url}/`)
+  get(url: string, id?: string | number): Observable<any> {
+    return this.http.get(id ? `${this.apiUrl}/${url}/${id}/` : `${this.apiUrl}/${url}/`)
       .map((res: Response) => res);
   }
 
-  getItem(url, id): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${url}/${id}/`)
-      .map((res: Response) => res);
-  }
-
-  post(url, data): Observable<any> {
+  post(url: string, data): Observable<any> {
     return this.http.post(`${this.apiUrl}/${url}`, data)
       .map((res: Response) => res);
   }
 
-  put(url, data): Observable<any> {
+  put(url: string, data): Observable<any> {
     return this.http.put(`${this.apiUrl}/${url}`, data)
       .map((res: Response) => res);
   }

@@ -9,15 +9,15 @@ export class PostsService {
   constructor(private api: ApiService) { }
 
   getPosts(): Observable<Post[]> {
-    return this.api.getItems('posts')
+    return this.api.get('posts')
   }
 
   getPost(id): Observable<Post> {
-    return this.api.getItem('posts', id)
+    return this.api.get('posts', id)
   }
 
   getCategories(): Observable<Category[]> {
-    return this.api.getItems('categories')
+    return this.api.get('categories')
   }
 
 }
