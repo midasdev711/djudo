@@ -13,7 +13,7 @@ export class PostsService {
   }
 
   getPost(id): Observable<Post> {
-    return this.api.get('posts', id)
+    return this.api.get(`posts/${id}`)
   }
 
   getCategories(): Observable<Category[]> {
