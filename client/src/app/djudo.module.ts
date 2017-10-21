@@ -22,6 +22,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import { CommentsComponent } from '@app/comments/comments.component';
+import {ApiService} from '@app/shared/services/api.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { CommentsComponent } from '@app/comments/comments.component';
   ],
   providers: [
     PostsService,
+    ApiService,
     { provide: API_URL, useValue: 'http://localhost:8000/api' }
   ],
   bootstrap: [AppComponent]
