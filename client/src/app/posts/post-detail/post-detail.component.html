@@ -22,12 +22,9 @@
     </mat-card>
   </div>
 
-  <div class="comments-container">
-    <mat-card *ngIf="(post$ | async)?.comments.length > 0">
+  <div class="comments-container" *ngIf="(post$ | async)?.comments.length > 0">
       <div *ngFor="let comment of (post$ | async)?.comments">
-        <div>{{ comment.user.username }}</div>
-        <div>{{ comment.content }}</div>
+        <djudo-comments [comment]="comment"></djudo-comments>
       </div>
-    </mat-card>
   </div>
 </section>
