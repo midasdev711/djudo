@@ -4,7 +4,7 @@ import { PostsService } from '@app/shared/services/posts/post.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
 import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
-import { Post, Category } from '@app/posts/post-list/posts';
+import { Post, Category } from '@app/posts/posts';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';

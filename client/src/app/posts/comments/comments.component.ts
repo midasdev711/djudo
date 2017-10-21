@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Comment} from '@app/posts/post-list/posts';
+import {Comment} from '@app/posts/posts';
 
 @Component({
   selector: 'djudo-comments',

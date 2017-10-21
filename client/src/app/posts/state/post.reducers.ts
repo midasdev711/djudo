@@ -1,4 +1,4 @@
-import { Post, Category, Comment } from '@app/posts/post-list/posts';
+import { Post, Category, Comment } from '@app/posts/posts';
 import { PostActionTypes, PostActions, } from '@app/posts/state/post.actions';
 import { AppState } from '@app/state/index';
 

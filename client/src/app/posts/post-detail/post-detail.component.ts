@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '@app/state/index';
 import { PostsQuery } from '@app/posts/state/post.reducers';
 import { SelectPostAction } from '@app/posts/state/post.actions';
-import { Post } from '../post-list/posts';
+import { Post } from '../posts';
 
 @Component({
   selector: 'djudo-post-detail',
