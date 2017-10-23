@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions, toPayload } from '@ngrx/effects';
-import { PostsService } from '@app/shared/post.service';
+import { PostsService } from '@app/shared/services/posts/post.service';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
-import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/state/posts/post.actions';
-import { Post, Category } from '@app/post-list/posts';
+import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
+import { Post, Category } from '@app/posts/posts';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';

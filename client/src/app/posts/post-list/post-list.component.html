@@ -6,10 +6,10 @@
             <h1 class="flex-12">{{ category.title }}</h1>
             <div class="post-container flex-12" >
               <ng-container *ngFor=" let post of posts$ | async ">
-                <mat-card class="post" *ngIf="post.category_obj.title == category.title" (click)="getPost(post.id)" >
+                <div class="post" *ngIf="post.category_obj.title == category.title" (click)="getPost(post.id)" >
                     <h2>{{ post.title }}</h2>
                     <h3>{{ post.description }}</h3>
-                  </mat-card>
+                  </div>
               </ng-container>
             </div>
           </ng-container>

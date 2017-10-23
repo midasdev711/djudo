@@ -21,4 +21,10 @@
       <p>{{ (post$ | async)?.body }}</p>
     </mat-card>
   </div>
+
+  <div class="comments-container" *ngIf="(post$ | async)?.comments.length > 0">
+      <ng-container *ngFor="let comment of (post$ | async)?.comments">
+        <djudo-comments [comment]="comment"></djudo-comments>
+      </ng-container>
+  </div>
 </section>
