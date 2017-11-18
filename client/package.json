@@ -10,7 +10,8 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test --single-run",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "push": "git push -u origin master; git push -u github master"
   },
   "private": true,
   "dependencies": {
@@ -29,13 +30,16 @@
     "@ngrx/effects": "4.0.2",
     "@ngrx/store": "4.0.2",
     "@ngrx/store-devtools": "4.0.0",
+    "classlist.js": "^1.1.20150312",
     "core-js": "2.4.1",
+    "intl": "^1.2.5",
     "lodash": "^4.17.4",
     "ngrx-store-freeze": "0.1.9",
     "redux": "3.6.0",
     "redux-thunk": "2.2.0",
     "rxjs": "5.4.2",
     "ts-helpers": "1.1.2",
+    "web-animations-js": "^2.3.1",
     "zone.js": "0.8.16"
   },
   "devDependencies": {

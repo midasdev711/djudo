@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
 import { AppState } from '@app/state/index';
 import { PostsQuery } from '@app/posts/state/post.reducers';
 import { SelectPostAction } from '@app/posts/state/post.actions';
@@ -9,7 +17,19 @@ import { Post } from '../posts';
 @Component({
   selector: 'djudo-post-detail',
   templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.scss']
+  styleUrls: ['./post-detail.component.scss'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({transform: 'translateX(0)'})),
+      transition('void => *', [
+        style({transform: 'translateX(-100%)'}),
+        animate('200ms ease-in-out')
+      ]),
+      transition('* => void', [
+        animate('200ms ease-in-out', style({transform: 'translateX(100%)'}))
+      ])
+    ])
+  ]
 })
 export class PostDetailComponent implements OnInit {
 

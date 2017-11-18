@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {appRoutes} from './djudo.routes';
@@ -33,7 +33,7 @@ import {ApiService} from '@app/shared/services/api.service';
   ],
   imports: [
     BrowserModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MaterialModule,
     RouterModule.forRoot(appRoutes, { useHash: false }),
     HttpClientModule,
