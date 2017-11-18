@@ -30,7 +30,6 @@ export class PostListComponent implements OnInit {
   }
 
   getPost(id: number) {
-    this.store.dispatch(new SelectPostAction(id));
     this.router.navigate(['posts', id]);
   }
 }
