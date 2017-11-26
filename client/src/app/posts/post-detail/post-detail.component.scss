@@ -37,6 +37,13 @@
             color: $grey;
           }
         }
+        .fb-comment-container {
+          margin-top: 5%;
+          fb-comments {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
       }
   }
 }

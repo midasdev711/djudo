@@ -19,12 +19,15 @@
           </div>
         </div>
       <p>{{ (post$ | async)?.body }}</p>
+      <div class="fb-comment-container">
+        <fb-comments [href]="'http://djudo.com/' + (post$ | async)?.id" ></fb-comments>
+      </div>
     </mat-card>
   </div>
 
-  <div class="comments-container" *ngIf="(post$ | async)?.comments.length > 0">
-      <ng-container *ngFor="let comment of (post$ | async)?.comments">
-        <djudo-comments [comment]="comment"></djudo-comments>
-      </ng-container>
-  </div>
+  <!--<div class="comments-container" *ngIf="(post$ | async)?.comments.length > 0">-->
+      <!--<ng-container *ngFor="let comment of (post$ | async)?.comments">-->
+        <!--<djudo-comments [comment]="comment"></djudo-comments>-->
+      <!--</ng-container>-->
+  <!--</div>-->
 </section>

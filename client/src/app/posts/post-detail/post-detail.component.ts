@@ -8,6 +8,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { FacebookService, InitParams } from 'ngx-facebook';
 
 import { AppState } from '@app/state/index';
 import { PostsQuery } from '@app/posts/state/post.reducers';
@@ -35,7 +36,17 @@ export class PostDetailComponent implements OnInit {
 
   post$: Store<Post>;
 
-  constructor( private store: Store<AppState>, private router: ActivatedRoute ) { }
+  constructor(private fb: FacebookService,
+              private store: Store<AppState>,
+              private router: ActivatedRoute ) {
+    let initParams: InitParams = {
+      appId: '354980508246758',
+      xfbml: true,
+      version: 'v2.8'
+    };
+
+    fb.init(initParams);
+  }
 
   ngOnInit() {
     let id = this.router.snapshot.params.id;
