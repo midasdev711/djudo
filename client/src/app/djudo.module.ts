@@ -11,7 +11,6 @@ import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MaterialModule } from '@app/shared/material/material.module';
-import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from './djudo.component';
 import { PostsService } from '@app/shared/services/posts/post.service';
 import { PostEffects } from '@app/posts/state/post.effects';
@@ -40,7 +39,6 @@ import {ApiService} from '@app/shared/services/api.service';
     StoreModule.forRoot(ROOT_REDUCER, {
       metaReducers: META_REDUCERS,
     }),
-    FlexLayoutModule,
     EffectsModule.forRoot([PostEffects]),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 5 }) : [],
     PostsModule
