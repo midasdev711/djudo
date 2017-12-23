@@ -21,6 +21,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import {ApiService} from '@app/shared/services/api.service';
+import { TypeAheadComponent } from './type-ahead/type-ahead.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {ApiService} from '@app/shared/services/api.service';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    TypeAheadComponent
   ],
   imports: [
     BrowserModule,
