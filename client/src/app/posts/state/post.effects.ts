@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions, toPayload } from '@ngrx/effects';
 import { PostsService } from '@app/shared/services/posts/post.service';
-import { Router } from '@angular/router';
 import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
 import { Post, Category } from '@app/posts/posts';
 import 'rxjs/add/operator/switchMap';
