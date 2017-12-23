@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Effect, Actions, toPayload } from '@ngrx/effects';
 import { PostsService } from '@app/shared/services/posts/post.service';
 import { Router } from '@angular/router';
-import * as _ from 'lodash';
 import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
 import { Post, Category } from '@app/posts/posts';
 import 'rxjs/add/operator/switchMap';
@@ -13,8 +12,7 @@ import 'rxjs/add/operator/do';
 export class PostEffects {
     constructor(
         private postsService: PostsService,
-        private action$: Actions,
-        private router: Router) { }
+        private action$: Actions) { }
 
     @Effect() getPosts$ = this.action$
         .ofType(PostActionTypes.LOAD_POSTS)
