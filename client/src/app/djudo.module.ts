@@ -48,7 +48,7 @@ import {ApiService} from '@app/shared/services/api.service';
   providers: [
     PostsService,
     ApiService,
-    { provide: API_URL, useValue: 'http://localhost:8000/api' }
+    { provide: API_URL, useValue: `${environment.baseUrl}/api` }
   ],
   bootstrap: [AppComponent]
 })
