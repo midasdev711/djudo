@@ -1,6 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatCardModule, MatToolbarModule, MatTabsModule, MatMenuModule, MatIconModule, MatListModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {
+  MatCardModule,
+  MatToolbarModule,
+  MatTabsModule,
+  MatMenuModule,
+  MatIconModule,
+  MatListModule
+} from '@angular/material';
 
 const modules = [
   MatCardModule,
@@ -21,4 +28,5 @@ const modules = [
     modules
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {
+}
