@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {appRoutes} from './djudo.routes';
 import { StoreModule } from '@ngrx/store';
@@ -36,6 +37,7 @@ import { TypeAheadComponent } from './type-ahead/type-ahead.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes, { useHash: false }),
     HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCER, {
