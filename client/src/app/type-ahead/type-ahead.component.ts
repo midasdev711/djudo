@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import {AppState} from '@app/state';
 import {GetSearchResults} from '@app/type-ahead/type-ahead.actions';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'djudo-type-ahead',
@@ -18,9 +19,9 @@ import {FormBuilder, FormGroup} from '@angular/forms';
       </mat-form-field>
       <ng-container *ngIf="(typeAhead$ | async) !== undefined && form.value.searchTerm !== ''">
         <div *ngFor="let term of (typeAhead$ | async)?.searchResults">
-          <p>
-            {{ term.title }}
-          </p>
+          <ul>
+            <li (click)="goToPost(term.id)" >{{ term.title }}</li>
+          </ul>
         </div>
       </ng-container>
     </form>
@@ -32,7 +33,9 @@ export class TypeAheadComponent {
   public form: FormGroup;
   public typeAhead$: Observable<any>;
 
-  constructor(private store: Store<AppState>, private fb: FormBuilder) {
+  constructor(private store: Store<AppState>,
+              private fb: FormBuilder,
+              private router: Router) {
     this.typeAhead$ = this.store.select(state => state.typeAhead);
     this.form = this.fb.group({
       "searchTerm": [""]
@@ -48,4 +51,7 @@ export class TypeAheadComponent {
     });
   }
 
+  public goToPost(id): void {
+    this.router.navigate(['posts', id]);
+  }
 }
