@@ -9,8 +9,8 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'djudo-type-ahead',
   template: `    
-    <form [formGroup]="form" class="example-form">
-      <mat-form-field class="example-full-width">
+    <form [formGroup]="form" class="type-ahead-form" autocomplete="off">
+      <mat-form-field class="type-ahead-full-width">
         <input matInput
                placeholder="search"
                type="search"
@@ -18,10 +18,17 @@ import {Router} from '@angular/router';
                (keypress)="search()">
       </mat-form-field>
       <ng-container *ngIf="(typeAhead$ | async) !== undefined && form.value.searchTerm !== ''">
-        <div *ngFor="let term of (typeAhead$ | async)?.searchResults">
+        <div class="type-ahead-container">
           <ul>
-            <li (click)="goToPost(term.id)" >{{ term.title }}</li>
+            <li *ngFor="let term of (typeAhead$ | async)?.searchResults"
+                (click)="goToPost(term.id)" >
+              {{ term.title }}
+            </li>
           </ul>
+          
+          <ng-template #noSearch>
+            <p>no search results.</p>
+          </ng-template>
         </div>
       </ng-container>
     </form>
@@ -44,11 +51,6 @@ export class TypeAheadComponent {
 
   public search(): void {
     this.store.dispatch(new GetSearchResults(this.form.value.searchTerm));
-    this.typeAhead$.subscribe(d => {
-      if(d !== undefined) {
-        console.log(d.searchResults);
-      }
-    });
   }
 
   public goToPost(id): void {

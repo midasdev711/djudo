@@ -1,0 +1,23 @@
+@import '~assets/styles/grid';
+@import '~assets/styles/mixins';
+@import '~assets/styles/variables';
+
+:host {
+  .type-ahead-form {
+    .type-ahead-container {
+      box-shadow: 1px 0 5px $box-shadow-grey;
+      width: 300px;
+      max-width: 300px;
+
+      ul {
+        padding: 15px;
+        margin: 0;
+
+        li {
+          list-style: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
