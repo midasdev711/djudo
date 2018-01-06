@@ -13,6 +13,5 @@ export class TypeAheadEffects {
     .ofType(TypeAheadActionTypes.GET_SEARCH_RESULTS)
     .map(toPayload)
     .switchMap(term => this.typeAheadService.searchFor(term))
-    .do(res => console.log(res))
     .map(results => new GetSearchResultsSuccess(results))
 }

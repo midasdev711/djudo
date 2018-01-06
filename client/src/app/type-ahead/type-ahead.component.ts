@@ -16,6 +16,13 @@ import {FormBuilder, FormGroup} from '@angular/forms';
                formControlName="searchTerm"
                (keypress)="search()">
       </mat-form-field>
+      <ng-container *ngIf="(searchResults$ | async) !== undefined">
+        <div *ngFor="let term of (searchResults$ | async)?.searchResults">
+          <p>
+            {{ term.title }}
+          </p>
+        </div>
+      </ng-container>
     </form>
   `,
   styleUrls: ['./type-ahead.component.scss']
@@ -26,6 +33,7 @@ export class TypeAheadComponent {
   public searchResults$: Observable<any>;
 
   constructor(private store: Store<AppState>, private fb: FormBuilder) {
+    this.searchResults$ = this.store.select(state => state.typeAhead);
     this.form = this.fb.group({
       "searchTerm": [""]
     })
@@ -33,8 +41,11 @@ export class TypeAheadComponent {
 
   public search(): void {
     this.store.dispatch(new GetSearchResults(this.form.value.searchTerm));
-    this.searchResults$ = this.store.select(state => state);
-    // this.searchResults$.subscribe(d => console.log(d.searchResults));
+    this.searchResults$.subscribe(d => {
+      if(d !== undefined) {
+        console.log(d.searchResults);
+      }
+    });
   }
 
 }

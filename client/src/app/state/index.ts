@@ -6,12 +6,12 @@ import {typeAheadReducer, TypeAheadState} from '@app/type-ahead/type-ahead.reduc
 
 export interface AppState {
   posts: PostsState;
-  searchResults: TypeAheadState;
+  typeAhead: TypeAheadState;
 }
 
 export const ROOT_REDUCER = {
   posts: postReducers,
-  searchResults: typeAheadReducer
+  typeAhead: typeAheadReducer
 }
 
 export const META_REDUCERS = !environment.production
