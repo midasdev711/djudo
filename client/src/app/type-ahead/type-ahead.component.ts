@@ -19,12 +19,14 @@ import {Router} from '@angular/router';
       </mat-form-field>
       <ng-container *ngIf="(typeAhead$ | async) !== undefined && form.value.searchTerm !== ''">
         <div class="type-ahead-container">
-          <ul>
-            <li *ngFor="let term of (typeAhead$ | async)?.searchResults"
-                (click)="goToPost(term.id)" >
-              {{ term.title }}
-            </li>
-          </ul>
+          <ng-container *ngIf="(typeAhead$ | async)?.searchResults.length >= 1; else noSearch">
+            <ul>
+              <li *ngFor="let term of (typeAhead$ | async)?.searchResults"
+                  (click)="goToPost(term.id)" >
+                {{ term.title }}
+              </li>
+            </ul>
+          </ng-container>
           
           <ng-template #noSearch>
             <p>no search results.</p>
