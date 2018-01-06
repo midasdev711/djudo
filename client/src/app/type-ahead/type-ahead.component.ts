@@ -23,6 +23,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class TypeAheadComponent {
 
   public form: FormGroup;
+  public searchResults$: Observable<any>;
 
   constructor(private store: Store<AppState>, private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -31,8 +32,9 @@ export class TypeAheadComponent {
   }
 
   public search(): void {
-    this.store.dispatch(new GetSearchResults(this.form.value));
-    console.log(this.form.value.searchTerm);
+    this.store.dispatch(new GetSearchResults(this.form.value.searchTerm));
+    this.searchResults$ = this.store.select(state => state);
+    // this.searchResults$.subscribe(d => console.log(d.searchResults));
   }
 
 }

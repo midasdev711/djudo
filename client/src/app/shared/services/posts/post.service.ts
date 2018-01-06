@@ -9,23 +9,23 @@ export class PostsService {
   constructor(private api: ApiService) { }
 
   getPosts(): Observable<Post[]> {
-    return this.api.get('posts')
+    return this.api.get('posts/')
   }
 
   getPost(id): Observable<Post> {
-    return this.api.get(`posts/${id}`)
+    return this.api.get(`posts/${id}/`)
   }
 
   getCategories(): Observable<Category[]> {
-    return this.api.get('categories')
+    return this.api.get('categories/')
   }
 
   postComment(id: number, data: Comment): Observable<Comment> {
-    return this.api.post(`posts/${id}`, data);
+    return this.api.post(`posts/${id}/`, data);
   }
 
   putComment(id: number, data: Comment): Observable<Comment> {
-    return this.api.put(`posts/${id}`, data);
+    return this.api.put(`posts/${id}/`, data);
   }
 
 }

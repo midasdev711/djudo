@@ -22,6 +22,8 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import {ApiService} from '@app/shared/services/api.service';
+import {TypeAheadEffects} from '@app/type-ahead/type-ahead.effects';
+import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
 
 @NgModule({
   declarations: [
@@ -41,12 +43,13 @@ import {ApiService} from '@app/shared/services/api.service';
     StoreModule.forRoot(ROOT_REDUCER, {
       metaReducers: META_REDUCERS,
     }),
-    EffectsModule.forRoot([PostEffects]),
+    EffectsModule.forRoot([PostEffects, TypeAheadEffects]),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 5 }) : [],
     PostsModule
   ],
   providers: [
     PostsService,
+    TypeAheadService,
     ApiService,
     { provide: API_URL, useValue: `${environment.baseUrl}/api` }
   ],
