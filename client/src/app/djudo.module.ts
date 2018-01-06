@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {appRoutes} from './djudo.routes';
 import { StoreModule } from '@ngrx/store';
@@ -22,7 +22,6 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import {ApiService} from '@app/shared/services/api.service';
-import { TypeAheadComponent } from './type-ahead/type-ahead.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { TypeAheadComponent } from './type-ahead/type-ahead.component';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent,
-    TypeAheadComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
