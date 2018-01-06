@@ -3,20 +3,39 @@
 @import '~assets/styles/variables';
 
 :host {
+
   .type-ahead-form {
+    margin-bottom: 5%;
+
+    mat-form-field {
+      width: 300px;
+      max-width: 300px;
+    }
+
     .type-ahead-container {
       box-shadow: 1px 0 5px $box-shadow-grey;
       width: 300px;
       max-width: 300px;
+      margin-top: -1.25em;
 
       ul {
-        padding: 15px;
         margin: 0;
+        padding: 0;
 
         li {
+          padding: 8px 15px;
           list-style: none;
           cursor: pointer;
+
+          &:hover {
+            background-color: $monza-red;
+            color: $white;
+          }
         }
+      }
+
+      p {
+        padding: 15px;
       }
     }
   }
