@@ -28,7 +28,7 @@ class PostViewSet(generics.ListAPIView):
     serializer_class = PostSerializer
     filter_backends= [filters.SearchFilter, filters.OrderingFilter]
     permission_classes = [AllowAny]
-    search_fields = ['title', 'body']
+    search_fields = ['title']
 
     def get_queryset(self, *args, **kwargs):
         """
