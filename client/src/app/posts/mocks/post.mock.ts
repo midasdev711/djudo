@@ -56,3 +56,22 @@ export const postListMock: Post[] = [
     "comments": []
   }
 ];
+
+export const postMock =   {
+  "url": "http://localhost:8000/api/posts/1/",
+  "id": 1,
+  "title": "Vegan penne",
+  "slug": "vegan-penne",
+  "image": null,
+  "image_url": null,
+  "description": "a delicious vegan twist on a classic Italian dish",
+  "body": "Recipe coming soon!",
+  "published": true,
+  "created": "2017-11-18T22:01:24.256524Z",
+  "category_obj": {
+    "id": 2,
+    "title": "italian",
+    "slug": "italian"
+  },
+  "comments": []
+};
