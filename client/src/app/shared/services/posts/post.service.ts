@@ -17,7 +17,7 @@ export class PostsService {
   }
 
   getCategories(): Observable<Category[]> {
-    return this.api.get('categories/')
+    return this.api.get('categories/posts/')
   }
 
   postComment(id: number, data: Comment): Observable<Comment> {

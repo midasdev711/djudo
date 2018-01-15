@@ -22,14 +22,12 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'username', 'email', 'groups')
 
 class CategorySerializer(serializers.ModelSerializer):
-    posts = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     class Meta:
         model = Category
         fields = (
             'id',
             'title',
-            'slug',
-            'posts'
+            'slug'
         )
 
 class PostSerializer(serializers.ModelSerializer):
@@ -87,4 +85,15 @@ class PostSlugSerializer(serializers.ModelSerializer):
             'created',
             'category_obj',
             'comments'
+        )
+
+class CategoryPostSerializer(serializers.ModelSerializer):
+    posts = PostSerializer(many=True, read_only=True)
+    class Meta:
+        model = Category
+        fields = (
+            'id',
+            'title',
+            'slug',
+            'posts'
         )

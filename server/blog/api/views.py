@@ -12,7 +12,7 @@ from rest_framework.permissions import (
     IsAuthenticatedOrReadOnly,
 )
 from blog.models import Post, Category
-from .serializers import UserSerializer, PostSerializer, CategorySerializer
+from .serializers import UserSerializer, PostSerializer, CategorySerializer, CategoryPostSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -47,6 +47,13 @@ class CategoryViewApi(generics.ListAPIView):
     """
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+class CategoryPostViewApi(generics.ListAPIView):
+    """
+    List Serialized Category Objects
+    """
+    queryset = Category.objects.all()
+    serializer_class = CategoryPostSerializer
 
 
 class PostDetailAPIView(generics.RetrieveAPIView):
