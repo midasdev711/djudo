@@ -38,7 +38,7 @@ class Post(models.Model):
     body = models.TextField()
     published = models.BooleanField(default=True)
     created = models.DateTimeField(db_index=True, auto_now_add=True)
-    category = models.ForeignKey('blog.Category')
+    category = models.ForeignKey('blog.Category', related_name='posts')
 
     objects = PostManager()
 
