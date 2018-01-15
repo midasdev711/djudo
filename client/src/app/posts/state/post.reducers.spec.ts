@@ -1,7 +1,7 @@
-import { Post, Category, Comment } from '@app/posts/posts';
 import {
-  PostActionTypes, PostActions, LoadPostsActionSuccess,
-  LoadCategoriesActionSuccess, SelectPostActionSuccess,
+  LoadPostsActionSuccess,
+  LoadCategoriesActionSuccess,
+  SelectPostActionSuccess,
 } from '@app/posts/state/post.actions';
 import {postReducers, INITIAL_STATE, PostsQuery} from '@app/posts/state/post.reducers';
 import {postListMock, postMock} from '@app/posts/mocks/post.mock';
@@ -15,17 +15,17 @@ describe('post reducer', (): void => {
 
   it('should get a list of posts', (): void => {
     expect(postReducers(<any>{}, new LoadPostsActionSuccess(postListMock)))
-      .toEqual({ list: postListMock });
+      .toEqual({list: postListMock});
   });
 
   it('should get a list of categories', (): void => {
     expect(postReducers(<any>{}, new LoadCategoriesActionSuccess(categoryListMock)))
-      .toEqual({ categories: categoryListMock });
+      .toEqual({categories: categoryListMock});
   });
 
   it('should select a post', (): void => {
     expect(postReducers(<any>{}, new SelectPostActionSuccess(postMock)))
-      .toEqual({ post: postMock });
+      .toEqual({post: postMock});
   });
 
 });
@@ -38,7 +38,7 @@ describe('post query', (): void => {
       post: postMock,
       categories: categoryListMock
     },
-    typeAhead: { searchResults: postListMock }
+    typeAhead: {searchResults: postListMock}
   };
 
   it('should retrieve a list of posts', (): void => {
