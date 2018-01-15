@@ -29,6 +29,7 @@ class PostViewSet(generics.ListAPIView):
     filter_backends= [filters.SearchFilter, filters.OrderingFilter]
     permission_classes = [AllowAny]
     search_fields = ['title']
+    ordering_fields = ('title')
 
     def get_queryset(self, *args, **kwargs):
         """

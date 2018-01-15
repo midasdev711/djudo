@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {appRoutes} from './djudo.routes';
 import { StoreModule } from '@ngrx/store';
@@ -24,6 +24,7 @@ import {PostsModule} from '@app/posts/posts.module';
 import {ApiService} from '@app/shared/services/api.service';
 import {TypeAheadEffects} from '@app/type-ahead/type-ahead.effects';
 import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
+import { ReversePipe } from './shared/pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,15 @@ import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { useHash: false }),
     HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCER, {

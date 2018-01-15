@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PostsService } from '@app/shared/services/posts/post.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +8,5 @@ import { PostsService } from '@app/shared/services/posts/post.service';
 export class AppComponent {
   title = 'app';
 
-  constructor(private PostsService: PostsService) { }
+  constructor() { }
 }

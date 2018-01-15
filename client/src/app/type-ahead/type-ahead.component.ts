@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import {Component} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs/Observable';
 import {AppState} from '@app/state';
 import {GetSearchResults} from '@app/type-ahead/type-ahead.actions';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'djudo-type-ahead',
-  template: `    
+  template: `
     <form [formGroup]="form" class="type-ahead-form" autocomplete="off">
       <mat-form-field class="type-ahead-full-width">
         <input matInput
@@ -22,12 +22,12 @@ import {Router} from '@angular/router';
           <ng-container *ngIf="(typeAhead$ | async)?.searchResults.length >= 1; else noSearch">
             <ul>
               <li *ngFor="let term of (typeAhead$ | async)?.searchResults"
-                  (click)="goToPost(term.id)" >
+                  (click)="goToPost(term.id)">
                 {{ term.title }}
               </li>
             </ul>
           </ng-container>
-          
+
           <ng-template #noSearch>
             <p>no search results.</p>
           </ng-template>

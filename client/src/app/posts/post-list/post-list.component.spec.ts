@@ -1,6 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PostListComponent } from './post-list.component';
+import {PostListComponent} from './post-list.component';
+import {CommentsComponent} from '@app/posts/comments/comments.component';
+import {MaterialModule} from '@app/shared/material/material.module';
+import {FacebookModule} from 'ngx-facebook';
+import {TypeAheadComponent} from '@app/type-ahead/type-ahead.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {PostsService} from '@app/shared/services/posts/post.service';
+import {StoreModule} from '@ngrx/store';
+import {ROOT_REDUCER} from '@app/state';
+import {RouterModule} from '@angular/router';
+import {appRoutes} from '@app/djudo.routes';
+import {HomeComponent} from '@app/home/home.component';
+import {PostsModule} from '@app/posts/posts.module';
+import {APP_BASE_HREF} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;
@@ -8,9 +22,24 @@ describe('PostListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostListComponent ]
+      declarations: [
+        HomeComponent
+      ],
+      imports: [
+        PostsModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FacebookModule.forRoot(),
+        ReactiveFormsModule,
+        FormsModule, StoreModule.forRoot(ROOT_REDUCER),
+        RouterModule.forRoot(appRoutes)
+      ],
+      providers: [
+        PostsService,
+        {provide: APP_BASE_HREF, useValue: '/'}
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
