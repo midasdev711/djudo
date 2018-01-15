@@ -47,8 +47,8 @@ export class TypeAheadComponent {
               private router: Router) {
     this.typeAhead$ = this.store.select(state => state.typeAhead);
     this.form = this.fb.group({
-      "searchTerm": [""]
-    })
+      'searchTerm': ''
+    });
   }
 
   public search(): void {

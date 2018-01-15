@@ -24,7 +24,6 @@ import {PostsModule} from '@app/posts/posts.module';
 import {ApiService} from '@app/shared/services/api.service';
 import {TypeAheadEffects} from '@app/type-ahead/type-ahead.effects';
 import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
-import { ReversePipe } from './shared/pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { ReversePipe } from './shared/pipes/reverse.pipe';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent,
-    ReversePipe
+    HomeComponent
   ],
   imports: [
     BrowserModule,
