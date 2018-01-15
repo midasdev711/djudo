@@ -1,14 +1,18 @@
 type num = number | null;
 
 export interface Post {
+    url?: string;
     id: number;
     title: string;
     slug: string;
     description: string;
+    image?: string;
+    image_url?: string;
     body: string;
     published: boolean;
-    created: DateTimeFormat | null;
-    category: string;
+    created: DateTimeFormat | null | string;
+    category?: string;
+    category_obj?: Category;
     comments: Comment[];
 }
 

@@ -8,7 +8,7 @@ export interface PostsState {
     categories: Category[];
 }
 
-const INITIAL_STATE: PostsState = {
+export const INITIAL_STATE: PostsState = {
     list: [],
     post: {
         id: 0,
