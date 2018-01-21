@@ -49,12 +49,13 @@ class CategoryViewApi(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-class CategoryPostViewApi(generics.ListAPIView):
+class CategoryPostViewApi(generics.RetrieveAPIView):
     """
     List Serialized Category Objects
     """
     queryset = Category.objects.all()
     serializer_class = CategoryPostSerializer
+    lookup_field = 'pk'
 
 
 class PostDetailAPIView(generics.RetrieveAPIView):
