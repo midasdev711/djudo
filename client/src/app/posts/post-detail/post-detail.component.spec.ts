@@ -3,7 +3,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {PostDetailComponent} from './post-detail.component';
 import {FacebookModule} from 'ngx-facebook';
 import {MaterialModule} from '@app/shared/material/material.module';
-import {PostsService} from '@app/shared/services/posts/post.service';
+import {PostsService} from '@app/posts/post.service';
 import {StoreModule} from '@ngrx/store';
 import {ROOT_REDUCER} from '@app/state';
 import {RouterModule} from '@angular/router';

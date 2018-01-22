@@ -9,7 +9,7 @@ import {PostsModule} from '@app/posts/posts.module';
 import {FooterComponent} from '@app/footer/footer.component';
 import {APP_BASE_HREF} from '@angular/common';
 import {MaterialModule} from '@app/shared/material/material.module';
-import {PostsService} from '@app/shared/services/posts/post.service';
+import {PostsService} from '@app/posts/post.service';
 import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
 import {StoreModule} from '@ngrx/store';
 import {ROOT_REDUCER} from '@app/state';

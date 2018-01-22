@@ -6,7 +6,7 @@ import {MaterialModule} from '@app/shared/material/material.module';
 import {FacebookModule} from 'ngx-facebook';
 import {TypeAheadComponent} from '@app/type-ahead/type-ahead.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {PostsService} from '@app/shared/services/posts/post.service';
+import {PostsService} from '@app/posts/post.service';
 import {StoreModule} from '@ngrx/store';
 import {ROOT_REDUCER} from '@app/state';
 import {RouterModule} from '@angular/router';

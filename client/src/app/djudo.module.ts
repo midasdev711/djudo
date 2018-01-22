@@ -13,7 +13,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { MaterialModule } from '@app/shared/material/material.module';
 import { AppComponent } from './djudo.component';
-import { PostsService } from '@app/shared/services/posts/post.service';
+import { PostsService } from '@app/posts/post.service';
 import { PostEffects } from '@app/posts/state/post.effects';
 import { API_URL } from './djudo.token';
 import { HeaderComponent } from './header/header.component';

@@ -1,10 +1,9 @@
 import {TestBed, inject} from '@angular/core/testing';
-
-import {PostsService} from './post.service';
-import {ApiService} from '@app/shared/services/api.service';
 import {HttpClientModule} from '@angular/common/http';
+import {PostsService} from '@app/posts/post.service';
+import {ApiService} from '@app/shared/services/api.service';
 import {API_URL} from '@app/djudo.token';
-import {environment} from '../../../../environments/environment';
+import {environment} from '../../environments/environment';
 
 describe('PostsService', () => {
   beforeEach(() => {
