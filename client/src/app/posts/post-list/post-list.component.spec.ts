@@ -32,7 +32,8 @@ describe('PostListComponent', () => {
         MaterialModule,
         FacebookModule.forRoot(),
         ReactiveFormsModule,
-        FormsModule, StoreModule.forRoot(ROOT_REDUCER),
+        FormsModule,
+        StoreModule.forRoot(ROOT_REDUCER),
         RouterModule.forRoot(appRoutes)
       ],
       providers: [
@@ -49,7 +50,7 @@ describe('PostListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });
