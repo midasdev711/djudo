@@ -11,14 +11,6 @@
     typescript "~2.6.2"
     webpack-sources "^1.0.1"
 
-"@angular-devkit/core@0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.0.24.tgz#d57a49d42ce81cb5f299dcaee2025fd03b7aad70"
-  dependencies:
-    ajv "~5.5.1"
-    chokidar "^1.7.0"
-    source-map "^0.5.6"
-
 "@angular-devkit/core@~0.0.28":
   version "0.0.28"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.0.28.tgz#840b6efa728bc3e93a1c469e482cf1095c96561f"
@@ -27,13 +19,6 @@
     chokidar "^1.7.0"
     rxjs "^5.5.6"
     source-map "^0.5.6"
-
-"@angular-devkit/schematics@0.0.45":
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.0.45.tgz#07419a5f8b935e819c9ae039742e81902d9f287d"
-  dependencies:
-    "@angular-devkit/core" "0.0.24"
-    "@ngtools/json-schema" "^1.1.0"
 
 "@angular-devkit/schematics@~0.0.51":
   version "0.0.51"
@@ -7082,8 +7067,8 @@ typescript@~2.6.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 
 uglify-es@^3.3.4:
-  version "3.3.7"
-  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.7.tgz#d1249af668666aba7cb1163e277455be9eb393cf"
+  version "3.3.8"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.8.tgz#f2c68e6cff0d0f9dc9577e4da207151c2e753b7e"
   dependencies:
     commander "~2.13.0"
     source-map "~0.6.1"
