@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState} from '@app/state';
-import {LoadCategoriesAction} from '@app/posts/state/post.actions';
 import {Category} from '@app/posts/posts';
-import {PostsQuery} from '@app/posts/state/post.reducers';
 import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
+import {CategoryQuery} from '@app/category/state/category.reducers';
+import {LoadCategoriesAction} from '@app/category/state/category.actions';
 
 @Component({
   selector: 'djudo-category-list',
@@ -21,7 +21,7 @@ export class CategoryListComponent implements OnInit {
 
   ngOnInit() {
     this.store$.dispatch(new LoadCategoriesAction());
-    this.categories$ = this.store$.select(PostsQuery.getCategories);
+    this.categories$ = this.store$.select(CategoryQuery.getCategories);
   }
 
   getCategory(id: number) {
