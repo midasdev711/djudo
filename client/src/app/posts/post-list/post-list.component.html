@@ -2,9 +2,9 @@
   <djudo-type-ahead></djudo-type-ahead>
   <div class="flex">
     <section class="flex-row flex-10">
-      <div class="post-container flex-12">
+      <div class="flex-12">
         <ng-container *ngFor="let post of posts$ | async">
-          <div class="post" (click)="getPost(post.id)">
+          <div class="post card" (click)="getPost(post.id)">
             <h2>{{ post.title }}</h2>
             <h3>{{ post.description }}</h3>
           </div>

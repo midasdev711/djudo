@@ -1,3 +1,5 @@
+import {Category} from '@app/category/category';
+
 type num = number | null;
 
 export interface Post {
