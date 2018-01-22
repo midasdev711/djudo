@@ -5,7 +5,6 @@ export enum PostActionTypes {
     LOAD_POSTS = '[Post] Load Posts',
     LOAD_POSTS_SUCCESSFULLY = '[Post] Load Posts Successfully',
     LOAD_CATEGORIES = '[Post] Load Categories',
-    LOAD_CATEGORIES_SUCCESSFULLY = '[Post] Load Categories Successfully',
     SELECT_POST = '[Post] Select Post',
     SELECT_POST_SUCCESSFULLY = '[Post] Select Post Successfully'
 }

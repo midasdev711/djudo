@@ -1,4 +1,4 @@
-import {Post} from 'posts/posts';
+import {Post} from './posts';
 
 export const postListMock: Post[] = [
   {

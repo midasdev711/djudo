@@ -1,4 +1,4 @@
-import {Category} from 'posts/posts';
+import {Category} from './category';
 
 export const categoryListMock: Category[] = [
   {
