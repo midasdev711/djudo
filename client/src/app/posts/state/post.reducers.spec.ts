@@ -1,11 +1,12 @@
 import {
   LoadPostsActionSuccess,
-  LoadCategoriesActionSuccess,
   SelectPostActionSuccess,
 } from '@app/posts/state/post.actions';
+import {LoadCategoriesActionSuccess} from '@app/category/state/category.actions';
 import {postReducers, INITIAL_STATE, PostsQuery} from '@app/posts/state/post.reducers';
-import {postListMock, postMock} from '@app/posts/mocks/post.mock';
-import {categoryListMock} from '@app/posts/mocks/category.mocks';
+import {postListMock, postMock} from '@app/posts/post.mock';
+import {categoryListMock, categoryMock} from '@app/category/category.mocks';
+import {AppStateMocks} from '@app/djudo.mocks';
 
 describe('post reducer', (): void => {
 
@@ -18,11 +19,6 @@ describe('post reducer', (): void => {
       .toEqual({list: postListMock});
   });
 
-  it('should get a list of categories', (): void => {
-    expect(postReducers(<any>{}, new LoadCategoriesActionSuccess(categoryListMock)))
-      .toEqual({categories: categoryListMock});
-  });
-
   it('should select a post', (): void => {
     expect(postReducers(<any>{}, new SelectPostActionSuccess(postMock)))
       .toEqual({post: postMock});
@@ -32,25 +28,12 @@ describe('post reducer', (): void => {
 
 describe('post query', (): void => {
 
-  const AppState = {
-    posts: {
-      list: postListMock,
-      post: postMock,
-      categories: categoryListMock
-    },
-    typeAhead: {searchResults: postListMock}
-  };
-
   it('should retrieve a list of posts', (): void => {
-    expect(PostsQuery.getPosts(AppState)).toEqual(postListMock);
+    expect(PostsQuery.getPosts(AppStateMocks)).toEqual(postListMock);
   });
 
   it('should retrieve a post', (): void => {
-    expect(PostsQuery.getPost(AppState)).toEqual(postMock);
-  });
-
-  it('should retrieve a list of categories', (): void => {
-    expect(PostsQuery.getCategories(AppState)).toEqual(categoryListMock);
+    expect(PostsQuery.getPost(AppStateMocks)).toEqual(postMock);
   });
 
 });

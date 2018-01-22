@@ -29,8 +29,6 @@ export function postReducers(state: PostsState = INITIAL_STATE, action: PostActi
     switch(action.type) {
         case PostActionTypes.LOAD_POSTS_SUCCESSFULLY:
             return { ...state, list: action.payload }
-        case PostActionTypes.LOAD_CATEGORIES_SUCCESSFULLY:
-            return { ...state, categories: action.payload }
         case PostActionTypes.SELECT_POST_SUCCESSFULLY:
             return { ...state, post: action.payload }
         default:
@@ -41,5 +39,4 @@ export function postReducers(state: PostsState = INITIAL_STATE, action: PostActi
 export namespace PostsQuery {
     export const getPosts = (state: AppState) => state.posts.list;
     export const getPost = (state: AppState) => state.posts.post;
-    export const getCategories = (state: AppState) => state.posts.categories;
 }
