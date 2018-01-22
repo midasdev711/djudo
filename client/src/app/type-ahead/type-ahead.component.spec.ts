@@ -11,6 +11,7 @@ import {appRoutes} from '@app/djudo.routes';
 import {PostsModule} from '@app/posts/posts.module';
 import {APP_BASE_HREF} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CategoryModule} from '@app/category/category.module';
 
 describe('TypeAheadComponent', () => {
   let component: TypeAheadComponent;
@@ -25,7 +26,8 @@ describe('TypeAheadComponent', () => {
         BrowserAnimationsModule,
         PostsModule,
         RouterModule.forRoot(appRoutes),
-        StoreModule.forRoot(ROOT_REDUCER)
+        StoreModule.forRoot(ROOT_REDUCER),
+        CategoryModule
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue: '/'}

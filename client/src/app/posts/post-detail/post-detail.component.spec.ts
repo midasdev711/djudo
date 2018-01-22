@@ -12,6 +12,7 @@ import {HomeComponent} from '@app/home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import {APP_BASE_HREF} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CategoryModule} from '@app/category/category.module';
 
 describe('PostDetailComponent', () => {
   let component: PostDetailComponent;
@@ -26,7 +27,8 @@ describe('PostDetailComponent', () => {
         FacebookModule.forRoot(),
         MaterialModule,
         StoreModule.forRoot(ROOT_REDUCER),
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes),
+        CategoryModule
       ],
       providers: [
         PostsService,

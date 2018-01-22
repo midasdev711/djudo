@@ -16,6 +16,7 @@ import {ROOT_REDUCER} from '@app/state';
 import {ApiService} from '@app/shared/services/api.service';
 import {API_URL} from '@app/djudo.token';
 import {environment} from '../environments/environment';
+import {CategoryModule} from '@app/category/category.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -31,7 +32,8 @@ describe('AppComponent', () => {
         RouterModule.forRoot(appRoutes),
         PostsModule,
         MaterialModule,
-        StoreModule.forRoot(ROOT_REDUCER)
+        StoreModule.forRoot(ROOT_REDUCER),
+        CategoryModule
       ],
       providers: [{
         provide: APP_BASE_HREF,
