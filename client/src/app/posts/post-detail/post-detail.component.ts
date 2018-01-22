@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
 import { FacebookService, InitParams } from 'ngx-facebook';
 
 import { AppState } from '@app/state/index';
@@ -18,19 +11,7 @@ import { Post } from '../posts';
 @Component({
   selector: 'djudo-post-detail',
   templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.scss'],
-  animations: [
-    trigger('flyInOut', [
-      state('in', style({transform: 'translateX(0)'})),
-      transition('void => *', [
-        style({transform: 'translateX(-100%)'}),
-        animate('200ms ease-in-out')
-      ]),
-      transition('* => void', [
-        animate('200ms ease-in-out', style({transform: 'translateX(100%)'}))
-      ])
-    ])
-  ]
+  styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
 
@@ -39,7 +20,7 @@ export class PostDetailComponent implements OnInit {
   constructor(private fb: FacebookService,
               private store: Store<AppState>,
               private router: ActivatedRoute ) {
-    let initParams: InitParams = {
+    const initParams: InitParams = {
       appId: '354980508246758',
       xfbml: true,
       version: 'v2.8'
