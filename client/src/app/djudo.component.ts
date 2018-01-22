@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'djudo-root',
   templateUrl: './djudo.component.html',
-  styleUrls: ['./djudo.component.scss']
+  styleUrls: ['./djudo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'app';

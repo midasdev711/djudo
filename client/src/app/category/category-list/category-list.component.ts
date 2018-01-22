@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {AppState} from '@app/state';
 import {Category} from '@app/category/category';
@@ -10,7 +10,8 @@ import {LoadCategoriesAction} from '@app/category/state/category.actions';
 @Component({
   selector: 'djudo-category-list',
   templateUrl: 'category-list.component.html',
-  styleUrls: ['category-list.component.scss']
+  styleUrls: ['category-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CategoryListComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { LoadPostsAction } from '@app/posts/state/post.actions';
@@ -10,7 +10,8 @@ import { AppState } from '@app/state';
 @Component({
   selector: 'djudo-post-list',
   templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+  styleUrls: ['./post-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostListComponent implements OnInit {
 
