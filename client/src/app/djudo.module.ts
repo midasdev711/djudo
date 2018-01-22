@@ -24,6 +24,9 @@ import {PostsModule} from '@app/posts/posts.module';
 import {ApiService} from '@app/shared/services/api.service';
 import {TypeAheadEffects} from '@app/type-ahead/type-ahead.effects';
 import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
+import {CategoryModule} from '@app/category/category.module';
+import {CategoryEffects} from '@app/category/state/category.effects';
+import {CategoryService} from '@app/category/category.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CategoryModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
@@ -44,13 +48,14 @@ import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
     StoreModule.forRoot(ROOT_REDUCER, {
       metaReducers: META_REDUCERS,
     }),
-    EffectsModule.forRoot([PostEffects, TypeAheadEffects]),
+    EffectsModule.forRoot([PostEffects, TypeAheadEffects, CategoryEffects]),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 5 }) : [],
     PostsModule
   ],
   providers: [
     PostsService,
     TypeAheadService,
+    CategoryService,
     ApiService,
     { provide: API_URL, useValue: `${environment.baseUrl}/api` }
   ],

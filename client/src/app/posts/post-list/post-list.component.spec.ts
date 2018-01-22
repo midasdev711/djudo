@@ -16,6 +16,7 @@ import {PostsModule} from '@app/posts/posts.module';
 import {APP_BASE_HREF} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PostsQuery} from '@app/posts/state/post.reducers';
+import {CategoryModule} from '@app/category/category.module';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;
@@ -33,6 +34,7 @@ describe('PostListComponent', () => {
         FacebookModule.forRoot(),
         ReactiveFormsModule,
         FormsModule,
+        CategoryModule,
         StoreModule.forRoot(ROOT_REDUCER),
         RouterModule.forRoot(appRoutes)
       ],

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions, toPayload } from '@ngrx/effects';
 import { PostsService } from '@app/posts/post.service';
-import { PostActionTypes, LoadPostsActionSuccess, LoadCategoriesActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
+import { PostActionTypes, LoadPostsActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
 import { Post, Category } from '@app/posts/posts';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
@@ -17,11 +17,6 @@ export class PostEffects {
         .ofType(PostActionTypes.LOAD_POSTS)
         .switchMap(() => this.postsService.getPosts())
         .map((posts: Post[]) => new LoadPostsActionSuccess(posts));
-
-    @Effect() getCategories$ = this.action$
-        .ofType(PostActionTypes.LOAD_CATEGORIES)
-        .switchMap(() => this.postsService.getCategories())
-        .map((categories: Category[]) => new LoadCategoriesActionSuccess(categories));
 
     @Effect() selectPost$ = this.action$
         .ofType(PostActionTypes.SELECT_POST)

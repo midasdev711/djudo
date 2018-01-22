@@ -1,10 +1,10 @@
 <section class="category-list-container">
-  <djudo-type-ahead></djudo-type-ahead>
+  <!--<djudo-type-ahead></djudo-type-ahead>-->
   <div class="flex">
     <section class="flex-row flex-10">
       <div class="post-container flex-12">
         <ng-container *ngFor="let category of categories$ | async">
-          <div class="category" (click)="getPost(post.id)">
+          <div class="category" (click)="getCategory(category.id)">
             <h2>{{ category.title }}</h2>
           </div>
         </ng-container>

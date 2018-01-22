@@ -12,8 +12,7 @@ export const categoryComponents: Components = [
     CommonModule
   ],
   declarations: [...categoryComponents],
-  exports: [...categoryComponents],
-  providers: []
+  exports: [...categoryComponents]
 })
 export class CategoryModule {
 }

@@ -30,6 +30,8 @@ export const categoryReducer = (state: CategoryState = categoryInitialState, act
       return {...state, categoryList: action.payload};
     case CategoryActionTypes.SELECT_CATEGORIES_SUCCESSFULLY:
       return {...state, category: action.payload};
+    default:
+      return state;
   }
 }
 
