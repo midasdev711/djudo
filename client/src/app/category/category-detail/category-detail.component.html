@@ -1,0 +1,11 @@
+<section>
+
+  <div><h1>{{ (category$ | async)?.title }}</h1></div>
+
+  <ng-container *ngFor="let post of (category$ | async)?.posts">
+    <div>
+      <h2>{{ post.title }}</h2>
+    </div>
+  </ng-container>
+
+</section>

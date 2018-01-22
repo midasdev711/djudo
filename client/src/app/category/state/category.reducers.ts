@@ -37,4 +37,6 @@ export const categoryReducer = (state: CategoryState = categoryInitialState, act
 
 export namespace CategoryQuery {
   export const getCategories = (state: AppState) => state.categories.categoryList;
+
+  export const getCategory = (state: AppState) => state.categories.category;
 }

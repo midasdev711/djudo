@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Effect, Actions, toPayload } from '@ngrx/effects';
 import { PostsService } from '@app/posts/post.service';
 import { PostActionTypes, LoadPostsActionSuccess, SelectPostActionSuccess } from '@app/posts/state/post.actions';
-import { Post, Category } from '@app/posts/posts';
+import { Post } from '@app/posts/posts';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';

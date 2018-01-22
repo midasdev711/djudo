@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { LoadPostsAction } from '@app/posts/state/post.actions';
-import { Post, Category } from '../posts';
+import { Post } from '../posts';
 import { Observable } from 'rxjs/Observable';
 import { PostsQuery } from '@app/posts/state/post.reducers';
 import { AppState } from '@app/state';

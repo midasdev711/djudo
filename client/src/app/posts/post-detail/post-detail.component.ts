@@ -30,7 +30,7 @@ export class PostDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id = this.router.snapshot.params.id;
+    const id = this.router.snapshot.params.id;
     this.store.dispatch(new SelectPostAction(id));
     this.post$ = this.store.select(PostsQuery.getPost);
   }

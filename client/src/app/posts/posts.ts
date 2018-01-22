@@ -16,13 +16,6 @@ export interface Post {
     comments: Comment[];
 }
 
-export interface Category {
-    id: number;
-    title: string;
-    slug: string;
-    posts?: Post[];
-}
-
 export interface Comment {
   id: num;
   content_type: num;
