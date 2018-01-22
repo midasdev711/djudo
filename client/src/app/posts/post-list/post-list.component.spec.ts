@@ -15,6 +15,7 @@ import {HomeComponent} from '@app/home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import {APP_BASE_HREF} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PostsQuery} from '@app/posts/state/post.reducers';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;

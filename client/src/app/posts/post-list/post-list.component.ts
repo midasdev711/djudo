@@ -24,9 +24,9 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new LoadPostsAction());
-    this.store.dispatch(new LoadCategoriesAction());
+    // this.store.dispatch(new LoadCategoriesAction());
     this.posts$ = this.store.select(PostsQuery.getPosts);
-    this.categories$ = this.store.select(PostsQuery.getCategories);
+    // this.categories$ = this.store.select(PostsQuery.getCategories);
   }
 
   getPost(id: number) {
