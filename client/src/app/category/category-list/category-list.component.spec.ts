@@ -8,7 +8,7 @@ describe('Category List Component', () => {
   let component: CategoryListComponent;
   let fixture: ComponentFixture<CategoryListComponent>;
 
-  baseSpecConfig([], ...categoryComponents, [])
+  baseSpecConfig();
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CategoryListComponent);

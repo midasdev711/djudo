@@ -6,16 +6,18 @@ import {HomeComponent} from '@app/home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import {ROOT_REDUCER} from '@app/state';
 import {RouterModule} from '@angular/router';
+import {CategoryModule} from '@app/category/category.module';
 
 declare var beforeEach;
 
-export function baseSpecConfig(imports?: Array<any>, declarations?: Array<any>, providers?: Array<any>): void {
+export function baseSpecConfig(imports: Array<any> = [], declarations: Array<any> = [], providers: Array<any> = []): void {
   beforeEach( async() => {
     TestBed.configureTestingModule({
       imports: [
         StoreModule.forRoot(ROOT_REDUCER),
         RouterModule.forRoot(appRoutes),
         PostsModule,
+        CategoryModule,
         ...imports
       ],
       declarations: [
