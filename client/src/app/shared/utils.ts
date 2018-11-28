@@ -4,7 +4,7 @@ import {StoreModule} from '@ngrx/store';
 import {async, TestBed} from '@angular/core/testing';
 import {HomeComponent} from '@app/home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
-import {ROOT_REDUCER} from '@app/state';
+import {ROOT_REDUCER} from '@app/djudo.token';
 import {RouterModule} from '@angular/router';
 import {CategoryModule} from '@app/category/category.module';
 

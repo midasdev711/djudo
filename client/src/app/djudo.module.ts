@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {appRoutes} from './djudo.routes';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ROOT_REDUCER, META_REDUCERS } from '@app/state';
+import {META_REDUCERS, rootReducer} from '@app/state';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -15,7 +15,7 @@ import { MaterialModule } from '@app/shared/material/material.module';
 import { AppComponent } from './djudo.component';
 import { PostsService } from '@app/posts/post.service';
 import { PostEffects } from '@app/posts/state/post.effects';
-import { API_URL } from './djudo.token';
+import {API_URL, ROOT_REDUCER} from './djudo.token';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
@@ -57,7 +57,8 @@ import {CategoryService} from '@app/category/category.service';
     TypeAheadService,
     CategoryService,
     ApiService,
-    { provide: API_URL, useValue: `${environment.baseUrl}/api` }
+    { provide: API_URL, useValue: `${environment.baseUrl}/api` },
+    { provide: ROOT_REDUCER, useValue: rootReducer() }
   ],
   bootstrap: [AppComponent]
 })

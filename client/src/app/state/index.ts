@@ -11,10 +11,12 @@ export interface AppState {
   categories: CategoryState;
 }
 
-export const ROOT_REDUCER = {
-  posts: postReducers,
-  typeAhead: typeAheadReducer,
-  categories: categoryReducer
+export function rootReducer() {
+  return {
+    posts: postReducers,
+    typeAhead: typeAheadReducer,
+    categories: categoryReducer
+  };
 }
 
 export const META_REDUCERS = !environment.production

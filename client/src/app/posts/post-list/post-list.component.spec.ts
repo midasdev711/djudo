@@ -1,21 +1,18 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {PostListComponent} from './post-list.component';
-import {CommentsComponent} from '@app/posts/comments/comments.component';
 import {MaterialModule} from '@app/shared/material/material.module';
 import {FacebookModule} from 'ngx-facebook';
-import {TypeAheadComponent} from '@app/type-ahead/type-ahead.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PostsService} from '@app/posts/post.service';
 import {StoreModule} from '@ngrx/store';
-import {ROOT_REDUCER} from '@app/state';
+import {ROOT_REDUCER} from '@app/djudo.token';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from '@app/djudo.routes';
 import {HomeComponent} from '@app/home/home.component';
 import {PostsModule} from '@app/posts/posts.module';
 import {APP_BASE_HREF} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {PostsQuery} from '@app/posts/state/post.reducers';
 import {CategoryModule} from '@app/category/category.module';
 
 describe('PostListComponent', () => {
