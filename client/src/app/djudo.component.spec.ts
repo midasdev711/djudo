@@ -12,7 +12,7 @@ import {MaterialModule} from '@app/shared/material/material.module';
 import {PostsService} from '@app/posts/post.service';
 import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
 import {StoreModule} from '@ngrx/store';
-import {ROOT_REDUCER} from '@app/state';
+import {ROOT_REDUCER} from '@app/djudo.token';
 import {ApiService} from '@app/shared/services/api.service';
 import {API_URL} from '@app/djudo.token';
 import {environment} from '../environments/environment';

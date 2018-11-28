@@ -20,6 +20,7 @@ export interface Post {
 
 export interface Comment {
   id: num;
+  user?: any;
   content_type: num;
   object_id: num;
   parent: num;

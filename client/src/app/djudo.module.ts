@@ -27,6 +27,7 @@ import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
 import {CategoryModule} from '@app/category/category.module';
 import {CategoryEffects} from '@app/category/state/category.effects';
 import {CategoryService} from '@app/category/category.service';
+import {SharedModule} from '@app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {CategoryService} from '@app/category/category.service';
     CategoryModule,
     MaterialModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { useHash: false }),
     HttpClientModule,
