@@ -13,7 +13,7 @@ export class GetSearchResults implements Action {
 
 export class GetSearchResultsSuccess implements Action {
   readonly type = TypeAheadActionTypes.GET_SEARCH_RESULTS_SUCCESS;
-  constructor(public payload: Post[]) {}
+  constructor(public payload) {}
 }
 
 export type TypeAheadActions = GetSearchResultsSuccess;

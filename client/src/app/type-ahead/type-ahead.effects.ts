@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Actions, Effect, toPayload} from '@ngrx/effects';
+import {Actions, Effect} from '@ngrx/effects';
 import {TypeAheadService} from '@app/type-ahead/type-ahead.service';
-import {GetSearchResultsSuccess, TypeAheadActionTypes} from '@app/type-ahead/type-ahead.actions';
+import {GetSearchResults, GetSearchResultsSuccess, TypeAheadActionTypes} from '@app/type-ahead/type-ahead.actions';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/debounceTime';
+import {Post} from '@app/posts/posts';
 
 @Injectable()
 export class TypeAheadEffects {
@@ -13,9 +14,9 @@ export class TypeAheadEffects {
 
   @Effect() searchTerm = this.action$
     .ofType(TypeAheadActionTypes.GET_SEARCH_RESULTS)
-    .map(toPayload)
+    .map((action: GetSearchResults) => action.payload)
     .debounceTime(300)
     .distinctUntilChanged()
-    .switchMap(term => this.typeAheadService.searchFor(term))
-    .map(results => new GetSearchResultsSuccess(results))
+    .switchMap((term: Post[] | string) => this.typeAheadService.searchFor(<string>term))
+    .map(results => new GetSearchResultsSuccess(results));
 }

@@ -7,6 +7,7 @@ import { AppState } from '@app/state/index';
 import { PostsQuery } from '@app/posts/state/post.reducers';
 import { SelectPostAction } from '@app/posts/state/post.actions';
 import { Post } from '../posts';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'djudo-post-detail',
@@ -15,7 +16,7 @@ import { Post } from '../posts';
 })
 export class PostDetailComponent implements OnInit {
 
-  post$: Store<Post>;
+  post$: Observable<Post>;
 
   constructor(private fb: FacebookService,
               private store: Store<AppState>,

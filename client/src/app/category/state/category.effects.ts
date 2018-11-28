@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Actions, Effect, toPayload} from '@ngrx/effects';
+import {Actions, Effect} from '@ngrx/effects';
 import {Category} from '@app/category/category';
 import {
-  CategoryActionTypes, LoadCategoriesActionSuccess,
+  CategoryActionTypes, LoadCategoriesActionSuccess, SelectCategoryAction,
   SelectCategoryActionSuccess
 } from '@app/category/state/category.actions';
 import {CategoryService} from '@app/category/category.service';
@@ -20,7 +20,7 @@ export class CategoryEffects {
 
   @Effect() getCategory$ = this.action$
     .ofType(CategoryActionTypes.SELECT_CATEGORIES)
-    .map(toPayload)
+    .map((action: SelectCategoryAction) => action.payload)
     .switchMap(id => this.categoryService.getCategory(id))
     .map(category => new SelectCategoryActionSuccess(category));
 }

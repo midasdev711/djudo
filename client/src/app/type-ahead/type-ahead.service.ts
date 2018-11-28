@@ -9,6 +9,6 @@ export class TypeAheadService {
   constructor(private api: ApiService) {}
 
   searchFor(term: string): Observable<Post[]> {
-    return this.api.get(`posts/?search=${term}`)
+    return this.api.get(`posts/?search=${term}`);
   }
 }
