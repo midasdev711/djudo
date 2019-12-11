@@ -9,7 +9,7 @@ pip install virtualenv
 ```
 3. Clone this repo
 ```
-git clone git@github.com:midasdev/djudo.git
+git clone git@github.com:midasdev711/djudo.git
 ```
 ```
 Directory Structure:
