@@ -34,7 +34,7 @@
     "fs-extra": "^7.0.1",
     "global": "^4.3.2",
     "intl": "^1.2.5",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "ngrx-store-freeze": "0.1.9",
     "ngx-facebook": "^2.4.0",
     "redux": "3.6.0",
