@@ -3,7 +3,7 @@ astroid==1.5.3
 backports.functools-lru-cache==1.4
 cffi==1.11.5
 configparser==3.5.0
-cryptography==2.3.1
+cryptography==3.2
 Django==1.11.6
 django-cors-headers==2.1.0
 django-filter==1.0.4
